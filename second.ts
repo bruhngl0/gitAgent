@@ -132,8 +132,7 @@ app.post("/recording", async (req: any, res: any) => {
     writeFileSync(outputFile, audioBufferReply);
     console.log("Audio file saved to:", outputFile);
 
-    const ngrokUrl =
-      process.env.NGROK_URL || "aef8-49-207-245-144.ngrok-free.app"; //change this accordingly--change this in webhook in twilio dashboard
+    const ngrokUrl = process.env.NGROK_URL || "ngrok-urk"; //change this accordingly--change this in webhook in twilio dashboard
     const response = new TwilioTwiml.VoiceResponse();
     if (!response) {
       console.log("no response from twilio");
