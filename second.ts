@@ -52,12 +52,9 @@ app.post("/recording", async (req: any, res: any) => {
         const res = await axios.get(url, {
           responseType: "arraybuffer",
           auth: {
-            username:
-              process.env.TWILIO_ACCOUNT_SID! ||
-              "AC854572ba696a00fb3ad38b1cd3bc8ee5",
+            username: process.env.TWILIO_ACCOUNT_SID! || "twilio-sid",
             password:
-              process.env.TWILIO_AUTH_TOKEN! ||
-              "586e98ad603ae1ab44fe12648584451c",
+              process.env.TWILIO_AUTH_TOKEN! || "twilio-token-starts from 5",
           },
         });
         return res.data;
@@ -92,8 +89,7 @@ app.post("/recording", async (req: any, res: any) => {
         headers: {
           ...formData.getHeaders(),
           "api-subscription-key":
-            process.env.SARVAM_API_KEY ||
-            "dc39ab8c-dcb4-4f7d-b082-b93b63cc40ec",
+            process.env.SARVAM_API_KEY || "sarvam-api-key",
         },
       },
     );
@@ -112,7 +108,7 @@ app.post("/recording", async (req: any, res: any) => {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.GROQ_API_KEY || "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"}`,
+          Authorization: `Bearer ${process.env.GROQ_API_KEY || "groq-api-key"}`,
         },
       },
     );

@@ -91,7 +91,7 @@ app.post("/upload", async (req: any, res: any) => {
     const limitedReply = reply.slice(0, 100).trim();
     console.log("Limited Groq Reply:", limitedReply);
 
-    const audioUrl = await generateTTS({
+    /* const audioUrl = await generateTTS({
       text: limitedReply,
       languageCode: language_code,
     });
